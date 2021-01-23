@@ -15,14 +15,16 @@
 
 	<table border="1">
 		<tr>
+      <th>No</th>
 			<th>Nama</th>
 			<th>Jabatan</th>
 			<th>Umur</th>
 			<th>Alamat</th>
 			<th>Opsi</th>
 		</tr>
-		@foreach($pegawai as $p)
+		@foreach($pegawai as $index => $p)
 		<tr>
+      <td>{{ $index+1 }}</td>
 			<td>{{ $p->pegawai_nama }}</td>
 			<td>{{ $p->pegawai_jabatan }}</td>
 			<td>{{ $p->pegawai_umur }}</td>
