@@ -17,12 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("halo", function() {
+Route::get("halo", function () {
     return "Selamat datang di belajar laravel";
 });
+
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MalasNgodingController;
+use App\Http\Controllers\PegawaiNewController;
+use App\Http\Controllers\GuruController;
 
 Route::get("blog", [BlogController::class, 'home']);
 Route::get("blog/tentang", [BlogController::class, 'tentang']);
@@ -38,5 +42,15 @@ Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
 
 Route::get('/dosen', [DosenController::class, 'Index']);
 Route::get('dosen/{namadosen}', [DosenController::class, 'Index']);
-Route::get('/formulir', [PegawaiController::class,'formulir']);
-Route::post('/formulir/proses', [PegawaiController::class,'proses']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
+
+Route::get('/input', [MalasNgodingController::class, 'input']);
+Route::post('/proses', [MalasNgodingController::class, 'proses']);
+
+Route::get('/pegawainew', [PegawaiNewController::class, 'index']);
+
+Route::get('/guru', [GuruController::class, 'index']);
+Route::get('/guru/hapus/{id}', [GuruController::class, 'hapus']);
+Route::get('/guru/trash', [GuruController::class, 'trash']);
+Route::get('/guru/kembalikan/{id}', [GuruController::class, 'kembalikan']);

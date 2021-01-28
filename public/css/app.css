@@ -8,3 +8,4 @@ h2 {
 .container {
     background-color: red;
 }
+@import "~bootstrap/scss/bootstrap";

@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href='/css/app.css' rel="stylesheet" type="text/css"/>
 	<style type="text/css">
 		.pagination li{
 			float: left;
@@ -11,12 +14,12 @@
 	</style>
 </head>
 <body>
-
+<div class="container">
 	<h2>www.malasngoding.com</h2>
 	<h3>Data Pegawai</h3>
 
-	<h5>Cari Pegawai :</h5>
-	<form action="/pegawai/cari" method="GET">
+	<h5 class="text-center" >Cari Pegawai :</h5>
+	<form class="form-inline" action="/pegawai/cari" method="GET">
 	<input type="text" name="cari" placeholder="Cari pegawai..." value="{{old('cari')}}" />
 	<input type="submit" value="CARI" />
 	</form>
@@ -43,7 +46,7 @@
 			<td>
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
 				|
-				<a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+				<a class="btn btn-danger btn-sm" href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
@@ -57,6 +60,6 @@
 {{ $pegawai->links() }}
 	<!-- {{ $pegawai->lastPage() }} -->
 
-
+</div>
 </body>
 </html>
