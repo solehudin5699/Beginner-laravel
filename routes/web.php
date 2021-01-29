@@ -27,6 +27,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MalasNgodingController;
 use App\Http\Controllers\PegawaiNewController;
 use App\Http\Controllers\GuruController;
+use App\Models\Guru;
 
 Route::get("blog", [BlogController::class, 'home']);
 Route::get("blog/tentang", [BlogController::class, 'tentang']);
@@ -54,3 +55,6 @@ Route::get('/guru', [GuruController::class, 'index']);
 Route::get('/guru/hapus/{id}', [GuruController::class, 'hapus']);
 Route::get('/guru/trash', [GuruController::class, 'trash']);
 Route::get('/guru/kembalikan/{id}', [GuruController::class, 'kembalikan']);
+Route::get('/guru/kembalikan_semua', [GuruController::class, 'kembalikan_semua']);
+Route::get('/guru/hapus_permanen/{id}', [GuruController::class, 'hapus_permanen']);
+Route::get('/guru/hapus_permanen_semua', [GuruController::class, 'hapus_permanen_semua']);

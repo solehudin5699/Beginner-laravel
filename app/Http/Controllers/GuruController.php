@@ -29,4 +29,22 @@ class GuruController extends Controller
         $guru->restore();
         return redirect('/guru/trash');
     }
+    public function kembalikan_semua()
+    {
+        $guru = Guru::onlyTrashed();
+        $guru->restore();
+        return redirect('/guru/trash');
+    }
+    public function hapus_permanen($id)
+    {
+        $guru = Guru::onlyTrashed()->where('id', $id);
+        $guru->forceDelete();
+        return redirect('/guru/trash');
+    }
+    public function hapus_permanen_semua()
+    {
+        $guru = Guru::onlyTrashed();
+        $guru->forceDelete();
+        return redirect('/guru/trash');
+    }
 }
